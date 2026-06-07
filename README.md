@@ -8,7 +8,7 @@
 
 ## Ссылки
 
-- **GitHub:** [rapkuryer/tolyrobot](https://github.com/rapkuryer/tolyrobot)
+- **GitHub:** [rapkuryer-dot/tolyrobot](https://github.com/rapkuryer-dot/tolyrobot)
 - **Документация:** `/docs` на сайте
 - **Деплой:** [Vercel](https://vercel.com) — импорт репозитория, Next.js auto-detect
 
@@ -22,7 +22,7 @@
 ## Быстрый старт
 
 ```bash
-git clone https://github.com/rapkuryer/tolyrobot.git
+git clone https://github.com/rapkuryer-dot/tolyrobot.git
 cd tolyrobot
 npm install
 npm run dev
@@ -40,7 +40,7 @@ npm start
 ## Деплой на Vercel
 
 1. Зайди на [vercel.com/new](https://vercel.com/new)
-2. Import Git Repository → `rapkuryer/tolyrobot`
+2. Import Git Repository → `rapkuryer-dot/tolyrobot`
 3. Framework: **Next.js** (авто)
 4. Deploy
 

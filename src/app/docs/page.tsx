@@ -96,7 +96,7 @@ export default function DocsPage() {
 
         <DocSection title="6. Локальная разработка">
           <pre className="bg-gray-900/80 border border-white/10 rounded p-4 overflow-x-auto text-sm text-zinc-300">
-{`git clone https://github.com/rapkuryer/tolyrobot.git
+{`git clone https://github.com/rapkuryer-dot/tolyrobot.git
 cd tolyrobot
 npm install
 npm run dev
@@ -109,7 +109,7 @@ npm run dev
 
         <DocSection title="7. Деплой на Vercel">
           <ol className="list-decimal list-inside space-y-2 text-zinc-400">
-            <li>Зайди на vercel.com и импортируй репозиторий rapkuryer/tolyrobot</li>
+            <li>Зайди на vercel.com и импортируй репозиторий rapkuryer-dot/tolyrobot</li>
             <li>Framework Preset: Next.js (определяется автоматически)</li>
             <li>Build Command: npm run build</li>
             <li>Output: .next (по умолчанию)</li>

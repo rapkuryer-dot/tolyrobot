@@ -1,71 +1,65 @@
-## nextbot
+# TOLYROBOT
 
-Nextbot is a landing page developed to understand Spline model integration in NextJs project, the page layouts and design by using TailwindCSS, along with using Typescript.
+**TOLYROBOT** — фан-страница и 3D-веб-проект в честь инфлюенсера **Толи Яковенко**.
 
-## Table of Contents
+На главной — интерактивный 3D-робот (Spline + Next.js) с лицом Толи в шахтёрской каске. Проект поддерживается комьюнити и будущим токеном **$TOLY**.
 
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+> ⚠️ Неофициальный фан-проект. Не связан напрямую с Толей Яковенко.
 
-## Tech Stack
+## Ссылки
 
-- Next.js
-- TypeScript
-- Spline
+- **GitHub:** [rapkuryer/tolyrobot](https://github.com/rapkuryer/tolyrobot)
+- **Документация:** `/docs` на сайте
+- **Деплой:** [Vercel](https://vercel.com) — импорт репозитория, Next.js auto-detect
 
-## Installation
+## Стек
 
-To run this project locally, follow these steps:
+- Next.js 14 + TypeScript
+- Tailwind CSS
+- Spline 3D (`@splinetool/react-spline`)
+- Vercel для хостинга
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/nextbot.git
-```
-
-2. Navigate to the project directory:
+## Быстрый старт
 
 ```bash
-cd nextbot
-```
-
-3. Install dependencies:
-
-```bash
+git clone https://github.com/rapkuryer/tolyrobot.git
+cd tolyrobot
 npm install
+npm run dev
 ```
 
-4. Start the development server:
+Открой [http://localhost:3000](http://localhost:3000)
+
+## Сборка
 
 ```bash
+npm run build
 npm start
 ```
 
-## Usage
+## Деплой на Vercel
 
-Visit the [live demo](https://nextbot-five.vercel.app/) to explore nextbot's features, including:
+1. Зайди на [vercel.com/new](https://vercel.com/new)
+2. Import Git Repository → `rapkuryer/tolyrobot`
+3. Framework: **Next.js** (авто)
+4. Deploy
 
-- Homepage showcasing nextbot's capabilities.
-- About section providing information about the project.
-- Pricing section detailing subscription plans and benefits.
+Переменные окружения не требуются.
 
-## Contributing
+## $TOLY Token
 
-Contributions are welcome! Please follow these guidelines when contributing to the project:
+Комьюнити-токен для финансирования проекта: разработка, хостинг, 3D-улучшения и погашение долгов при постройке TOLYROBOT. Подробности — на странице `/docs`.
 
-- Fork the repository.
-- Create a new branch: `git checkout -b feature-branch`
-- Make your changes and commit them: `git commit -m 'Add new feature'`
-- Push to the branch: `git push origin feature-branch`
-- Submit a pull request.
+## Структура
 
-For major changes, please open an issue first to discuss potential changes.
+```
+src/app/
+  components/   # SplineHero, SiteNavbar, SiteFooter
+  libs/         # splineHeads.ts, PricingCards.ts
+  docs/         # Документация
+public/         # Текстуры головы Толи, bg.jpeg
+```
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-```
-
+MIT

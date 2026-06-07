@@ -3,7 +3,7 @@
 import Spline from '@splinetool/react-spline';
 import type { Application } from '@splinetool/runtime';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { applyToliHead, preloadToliTexture } from '../libs/splineHeads';
+import { applySceneBranding, applyToliHead, preloadToliTexture } from '../libs/splineHeads';
 
 const SCENE_URL = 'https://prod.spline.design/IXTSbGyJCKPpuQVy/scene.splinecode';
 
@@ -17,6 +17,11 @@ export default function SplineHero() {
 
   const handleLoad = useCallback(async (spline: Application) => {
     splineRef.current = spline;
+    applySceneBranding(spline);
+
+    if (typeof window !== 'undefined') {
+      (window as Window & { __splineApp?: Application }).__splineApp = spline;
+    }
 
     try {
       await applyToliHead(spline);
@@ -29,14 +34,17 @@ export default function SplineHero() {
 
   return (
     <section id="home" className="h-screen flex justify-center items-center bg-black text-white relative overflow-hidden">
-      <Spline
-        scene={SCENE_URL}
-        className="fixed top-0 left-0 w-full h-full z-[5]"
-        onLoad={handleLoad}
-      />
+      <div
+        className={`fixed inset-0 z-[5] transition-opacity duration-200 ${
+          isReady ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        aria-hidden={!isReady}
+      >
+        <Spline scene={SCENE_URL} className="h-full w-full" onLoad={handleLoad} />
+      </div>
 
       {!isReady && (
-        <div className="absolute inset-0 z-[10] flex items-center justify-center pointer-events-none bg-black">
+        <div className="fixed inset-0 z-[10] flex items-center justify-center bg-black">
           <div className="h-10 w-10 animate-spin rounded-full border-2 border-white/20 border-t-fuchsia-400" />
         </div>
       )}
@@ -45,7 +53,7 @@ export default function SplineHero() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-4 tracking-widest">TOLYROBOT</h1>
           <p className="text-xl text-zinc-300">
-            Фан-робот легенды — Толи Яковенко. Строим вместе. Поддерживаем через $TOLY.
+            A fan-built 3D tribute to Toli Yakovchuk. Explore the robot. Join the community.
           </p>
         </div>
       </div>

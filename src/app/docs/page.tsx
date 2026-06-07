@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import SiteNavbar from '../components/SiteNavbar';
 import SiteFooter from '../components/SiteFooter';
+import TwitterLink, { TWITTER_URL } from '../components/TwitterLink';
 
 export const metadata = {
   title: 'Docs — TOLYROBOT',
-  description: 'Документация фан-проекта TOLYROBOT в честь Толи Яковенко',
+  description: 'Documentation for the TOLYROBOT fan project celebrating Toli Yakovchuk',
 };
 
 export default function DocsPage() {
@@ -16,85 +17,97 @@ export default function DocsPage() {
           <p className="text-fuchsia-400 text-sm tracking-widest uppercase">Documentation</p>
           <h1 className="text-5xl font-bold tracking-widest">TOLYROBOT Docs</h1>
           <p className="text-zinc-400 text-lg">
-            Всё о фан-проекте, 3D-роботе, токене $TOLY и планах развития.
+            Everything about the fan project, the 3D robot, tech stack, and roadmap.
           </p>
         </header>
 
-        <DocSection title="1. Что такое TOLYROBOT?">
+        <DocSection title="1. What is TOLYROBOT?">
           <p>
-            <strong>TOLYROBOT</strong> — фан-страница и веб-проект, посвящённый известному
-            инфлюенсеру <strong>Толи Яковенко</strong>. На главной странице — интерактивный
-            3D-робот с его лицом в шахтёрской каске, собранный в Spline и встроенный в Next.js.
+            <strong>TOLYROBOT</strong> is a fan page and web project dedicated to influencer{' '}
+            <strong>Toli Yakovchuk</strong>. The homepage features an interactive 3D robot with his
+            face in a mining helmet, built in Spline and embedded in Next.js.
           </p>
           <p className="mt-4 text-zinc-400">
-            Проект создан комьюнити и не является официальным представительством Толи. Это дань
-            уважения, мем и технический эксперимент в одном флаконе.
+            The project is community-driven and is not an official representation of Toli. It is a
+            tribute, a meme, and a technical experiment rolled into one.
           </p>
         </DocSection>
 
-        <DocSection title="2. Миссия проекта">
+        <DocSection title="2. Project mission">
           <ul className="list-disc list-inside space-y-2 text-zinc-300">
-            <li>Сохранить культурный след Толи в формате 3D-робота</li>
-            <li>Объединить фанатов вокруг одного визуального символа</li>
-            <li>Профинансировать разработку через комьюнити и токен $TOLY</li>
-            <li>Закрыть долги, накопленные при строительстве проекта</li>
+            <li>Preserve Toli&apos;s cultural footprint as a 3D robot</li>
+            <li>Unite fans around one iconic visual symbol</li>
+            <li>Ship new features and scene improvements over time</li>
+            <li>Keep the experience free and open for the community</li>
           </ul>
         </DocSection>
 
-        <DocSection title="3. 3D-робот и технологии">
-          <p className="text-zinc-300">Стек проекта:</p>
+        <DocSection title="3. 3D robot & tech stack">
+          <p className="text-zinc-300">Project stack:</p>
           <ul className="list-disc list-inside space-y-2 text-zinc-400 mt-4">
             <li>
-              <strong className="text-white">Next.js 14</strong> — фреймворк и деплой на Vercel
+              <strong className="text-white">Next.js 14</strong> — framework and Vercel deployment
             </li>
             <li>
-              <strong className="text-white">Spline</strong> — 3D-сцена робота
+              <strong className="text-white">Spline</strong> — 3D robot scene
             </li>
             <li>
-              <strong className="text-white">@splinetool/runtime</strong> — замена текстуры головы
-              на лицо Толи при загрузке
+              <strong className="text-white">@splinetool/runtime</strong> — swaps the head texture to
+              Toli&apos;s face on load
             </li>
             <li>
-              <strong className="text-white">Tailwind CSS</strong> — тёмный UI в стиле сайта
+              <strong className="text-white">Tailwind CSS</strong> — dark UI matching the site style
             </li>
           </ul>
           <p className="mt-4 text-zinc-400">
-            Текстура головы: <code className="text-fuchsia-300">/toli-head-zoom.png</code>.
-            Применяется через matcap-слой объекта Head 2. Встроенный lookAt в сцене Spline
-            поворачивает голову за курсором.
+            Head texture: <code className="text-fuchsia-300">/toli-head-zoom.png</code>. Applied via
+            the matcap layer on the Head 2 object. The built-in lookAt event in the Spline scene
+            rotates the head toward the cursor.
           </p>
         </DocSection>
 
-        <DocSection title="4. Токен $TOLY">
+        <DocSection title="4. Official X (Twitter)">
           <p>
-            Мы создаём комьюнити-токен <strong className="text-fuchsia-300">$TOLY</strong> для
-            поддержки TOLYROBOT. Средства от покупок пойдут на:
+            Follow the project dev account{' '}
+            <a
+              href={TWITTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fuchsia-300 hover:text-fuchsia-200 font-semibold"
+            >
+              @tolyrobot
+            </a>{' '}
+            on X for build logs, release notes, scene updates, and community news.
           </p>
           <ul className="list-disc list-inside space-y-2 text-zinc-400 mt-4">
-            <li>Разработку и поддержку сайта</li>
-            <li>Улучшение 3D-модели и анимаций</li>
-            <li>Хостинг, домен, Vercel Pro при необходимости</li>
-            <li>Погашение долгов команды при постройке проекта</li>
-            <li>Маркетинг и развитие фан-экосистемы</li>
+            <li>Announcements when new site features ship</li>
+            <li>Behind-the-scenes on the 3D robot and Spline tweaks</li>
+            <li>Roadmap milestones and deployment updates</li>
+            <li>Direct channel to the team building TOLYROBOT</li>
           </ul>
-          <div className="mt-6 p-4 rounded border border-yellow-600/40 bg-yellow-900/10 text-yellow-200/80 text-sm">
-            ⚠️ $TOLY — комьюнити-токен в разработке. Не является инвестиционным предложением.
-            DYOR. Участвуй только на свой страх и риск.
+          <div className="mt-6">
+            <TwitterLink showLabel />
           </div>
         </DocSection>
 
         <DocSection title="5. Roadmap">
           <div className="space-y-4">
             <RoadmapItem phase="Phase 1 — Live" done>
-              Сайт TOLYROBOT, 3D-робот с лицом Толи, деплой на Vercel
+              TOLYROBOT site, 3D robot with Toli&apos;s face, Vercel deployment
             </RoadmapItem>
-            <RoadmapItem phase="Phase 2 — Token">Анонс и запуск $TOLY, whitelist для саппортеров</RoadmapItem>
-            <RoadmapItem phase="Phase 3 — Community">Discord, голосования за фичи, новые скины робота</RoadmapItem>
-            <RoadmapItem phase="Phase 4 — Scale">Мерч, NFT-скины, партнёрства с фан-комьюнити</RoadmapItem>
+            <RoadmapItem phase="Phase 2 — Community">
+              Discord, feature voting, new robot skins
+            </RoadmapItem>
+            <RoadmapItem phase="Phase 3 — Polish">
+              Smoother animations, mobile tuning, performance passes
+            </RoadmapItem>
+            <RoadmapItem phase="Phase 4 — Scale">
+              Merch concepts, collabs with the fan community
+            </RoadmapItem>
           </div>
         </DocSection>
 
-        <DocSection title="6. Локальная разработка">
+        <DocSection title="6. Local development">
           <pre className="bg-gray-900/80 border border-white/10 rounded p-4 overflow-x-auto text-sm text-zinc-300">
 {`git clone https://github.com/rapkuryer-dot/tolyrobot.git
 cd tolyrobot
@@ -103,17 +116,17 @@ npm run dev
 # → http://localhost:3000`}
           </pre>
           <p className="mt-4 text-zinc-500 text-sm">
-            Сборка для продакшена: <code className="text-fuchsia-300">npm run build</code>
+            Production build: <code className="text-fuchsia-300">npm run build</code>
           </p>
         </DocSection>
 
-        <DocSection title="7. Деплой на Vercel">
+        <DocSection title="7. Deploy on Vercel">
           <ol className="list-decimal list-inside space-y-2 text-zinc-400">
-            <li>Зайди на vercel.com и импортируй репозиторий rapkuryer-dot/tolyrobot</li>
-            <li>Framework Preset: Next.js (определяется автоматически)</li>
+            <li>Go to vercel.com and import the rapkuryer-dot/tolyrobot repository</li>
+            <li>Framework Preset: Next.js (auto-detected)</li>
             <li>Build Command: npm run build</li>
-            <li>Output: .next (по умолчанию)</li>
-            <li>Нажми Deploy — готово</li>
+            <li>Output: .next (default)</li>
+            <li>Click Deploy — done</li>
           </ol>
         </DocSection>
 
@@ -122,7 +135,7 @@ npm run dev
             href="/"
             className="inline-block px-8 py-3 rounded border border-fuchsia-500 hover:bg-fuchsia-900/30 transition-colors"
           >
-            ← На главную
+            ← Back to home
           </Link>
         </div>
       </main>

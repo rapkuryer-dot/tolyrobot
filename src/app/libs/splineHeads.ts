@@ -38,7 +38,35 @@ async function applyMatcapTexture(object: SPEObject, path: string) {
   await matcapLayer.updateTexture(textureUrl(path));
 }
 
+const LEGACY_BRANDING_OBJECTS = [
+  'logo',
+  'Shape 0',
+  'Shape 1',
+  'Shape',
+  'Shape 2',
+  'Shape 3',
+  'Shape 4',
+  'Shape 5',
+  'Shape 6',
+];
+
+export function applySceneBranding(spline: Application) {
+  LEGACY_BRANDING_OBJECTS.forEach((name) => {
+    const object = spline.findObjectByName(name);
+    if (object) object.visible = false;
+  });
+}
+
 export async function applyToliHead(spline: Application) {
+  applySceneBranding(spline);
+
+  spline.getAllObjects().forEach((object) => {
+    const name = object.name.toLowerCase();
+    if (name.includes('welcome') || name.includes('nextbot') || name.includes('next bot')) {
+      object.visible = false;
+    }
+  });
+
   spline.setGlobalEvents(true);
 
   const head = spline.findObjectByName('Head');

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import TwitterLink from './TwitterLink';
 
 export default function SiteNavbar() {
   return (
@@ -7,6 +8,7 @@ export default function SiteNavbar() {
         <Link href="/" className="font-bold tracking-widest hover:text-fuchsia-300 transition-colors">
           TOLYROBOT
         </Link>
+        <div className="flex items-center gap-4 sm:gap-6">
         <ul className="flex gap-4 sm:gap-8">
           <li>
             <Link className="hover:text-fuchsia-300 transition-colors text-xs sm:text-base" href="/#home">
@@ -16,11 +18,6 @@ export default function SiteNavbar() {
           <li>
             <Link className="hover:text-fuchsia-300 transition-colors text-xs sm:text-base" href="/#about">
               About
-            </Link>
-          </li>
-          <li>
-            <Link className="hover:text-fuchsia-300 transition-colors text-xs sm:text-base" href="/#token">
-              Token
             </Link>
           </li>
           <li>
@@ -34,6 +31,8 @@ export default function SiteNavbar() {
             </Link>
           </li>
         </ul>
+        <TwitterLink className="px-3 py-1.5" showLabel />
+        </div>
       </div>
     </div>
   );

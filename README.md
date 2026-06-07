@@ -1,25 +1,16 @@
 # TOLYROBOT
 
-**TOLYROBOT** — фан-страница и 3D-веб-проект в честь инфлюенсера **Толи Яковенко**.
+**TOLYROBOT** — a fan page and 3D web project celebrating influencer **Toli Yakovchuk**.
 
-На главной — интерактивный 3D-робот (Spline + Next.js) с лицом Толи в шахтёрской каске. Проект поддерживается комьюнити и будущим токеном **$TOLY**.
+The homepage features an interactive 3D robot (Spline + Next.js) with Toli's face in a mining helmet.
 
-> ⚠️ Неофициальный фан-проект. Не связан напрямую с Толей Яковенко.
+> ⚠️ Unofficial fan project. Not directly affiliated with Toli Yakovchuk.
 
-## Ссылки
+## Live demo
 
-- **GitHub:** [rapkuryer-dot/tolyrobot](https://github.com/rapkuryer-dot/tolyrobot)
-- **Документация:** `/docs` на сайте
-- **Деплой:** [Vercel](https://vercel.com) — импорт репозитория, Next.js auto-detect
+Deploy from this repo on [Vercel](https://vercel.com) — see [Deploy](#deploy-on-vercel) below.
 
-## Стек
-
-- Next.js 14 + TypeScript
-- Tailwind CSS
-- Spline 3D (`@splinetool/react-spline`)
-- Vercel для хостинга
-
-## Быстрый старт
+## Quick start
 
 ```bash
 git clone https://github.com/rapkuryer-dot/tolyrobot.git
@@ -28,38 +19,35 @@ npm install
 npm run dev
 ```
 
-Открой [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000).
 
-## Сборка
+## Scripts
 
-```bash
-npm run build
-npm start
-```
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server |
+| `npm run build` | Production build |
+| `npm run start` | Run production server |
+| `npm run verify:head` | Playwright check for Toli head texture |
 
-## Деплой на Vercel
-
-1. Зайди на [vercel.com/new](https://vercel.com/new)
-2. Import Git Repository → `rapkuryer-dot/tolyrobot`
-3. Framework: **Next.js** (авто)
-4. Deploy
-
-Переменные окружения не требуются.
-
-## $TOLY Token
-
-Комьюнити-токен для финансирования проекта: разработка, хостинг, 3D-улучшения и погашение долгов при постройке TOLYROBOT. Подробности — на странице `/docs`.
-
-## Структура
+## Project structure
 
 ```
 src/app/
   components/   # SplineHero, SiteNavbar, SiteFooter
   libs/         # splineHeads.ts, PricingCards.ts
-  docs/         # Документация
-public/         # Текстуры головы Толи, bg.jpeg
+  docs/         # Documentation page
+public/         # Toli head textures, bg.jpeg
 ```
 
-## License
+## Deploy on Vercel
 
-MIT
+1. Push this repo to GitHub
+2. Import Git Repository → `rapkuryer-dot/tolyrobot`
+3. Framework: **Next.js** (auto-detected)
+4. Click **Deploy** — no env vars required
+
+## Links
+
+- **GitHub:** [rapkuryer-dot/tolyrobot](https://github.com/rapkuryer-dot/tolyrobot)
+- **Docs:** `/docs` on the deployed site

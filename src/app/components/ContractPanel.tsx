@@ -1,22 +1,6 @@
-'use client';
-
-import { useCallback, useState } from 'react';
-import { Copy, Check } from 'lucide-react';
-import { TOLYROBOT_CONTRACT } from '../libs/contract';
+import ContractCopyButton from './ContractCopyButton';
 
 export default function ContractPanel() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(TOLYROBOT_CONTRACT);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  }, []);
-
   return (
     <section
       id="token"
@@ -38,26 +22,7 @@ export default function ContractPanel() {
 
         <div className="mx-auto max-w-2xl">
           <p className="mb-3 text-center text-sm text-zinc-500">Contract address</p>
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="group flex w-full items-center justify-between gap-4 rounded-lg border border-white/15 bg-black/60 px-4 py-4 text-left transition-colors hover:border-fuchsia-500/60 hover:bg-fuchsia-950/20"
-          >
-            <code className="break-all text-sm text-fuchsia-200 sm:text-base">{TOLYROBOT_CONTRACT}</code>
-            <span className="flex shrink-0 items-center gap-2 text-sm text-zinc-400 group-hover:text-fuchsia-300">
-              {copied ? (
-                <>
-                  <Check size={16} className="text-green-400" />
-                  <span className="text-green-400">Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy size={16} />
-                  <span>Copy</span>
-                </>
-              )}
-            </span>
-          </button>
+          <ContractCopyButton />
         </div>
       </div>
     </section>

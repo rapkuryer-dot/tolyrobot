@@ -2,6 +2,7 @@ import Link from 'next/link';
 import SiteNavbar from '../components/SiteNavbar';
 import SiteFooter from '../components/SiteFooter';
 import TwitterLink, { TWITTER_URL } from '../components/TwitterLink';
+import ContractCopyButton from '../components/ContractCopyButton';
 
 export const metadata = {
   title: 'Docs — TOLYROBOT',
@@ -12,7 +13,7 @@ export default function DocsPage() {
   return (
     <div className="bg-black min-h-screen text-white">
       <SiteNavbar />
-      <main className="max-w-4xl mx-auto px-4 py-16 space-y-12">
+      <main className="mx-auto max-w-4xl space-y-12 px-4 pb-16 pt-24">
         <header className="text-center space-y-4">
           <p className="text-fuchsia-400 text-sm tracking-widest uppercase">Documentation</p>
           <h1 className="text-5xl font-bold tracking-widest">TOLYROBOT Docs</h1>
@@ -90,7 +91,30 @@ export default function DocsPage() {
           </div>
         </DocSection>
 
-        <DocSection title="5. Roadmap">
+        <DocSection title="5. Community coin & contract">
+          <p>
+            The TOLYROBOT community coin helps support our robot and finance the project — 3D
+            development, hosting, scene upgrades, and everything needed to keep building.
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-zinc-400 mt-4">
+            <li>Fund the 3D robot and website improvements</li>
+            <li>Cover hosting and deployment costs</li>
+            <li>Support new features for the fan community</li>
+          </ul>
+          <p className="mt-6 text-sm text-zinc-500">Contract address — click to copy</p>
+          <div className="mt-3">
+            <ContractCopyButton />
+          </div>
+          <p className="mt-4 text-sm text-zinc-500">
+            Also available on the homepage under{' '}
+            <Link href="/#token" className="text-fuchsia-300 hover:text-fuchsia-200">
+              Token
+            </Link>
+            .
+          </p>
+        </DocSection>
+
+        <DocSection title="6. Roadmap">
           <div className="space-y-4">
             <RoadmapItem phase="Phase 1 — Live" done>
               TOLYROBOT site, 3D robot with Toli&apos;s face, Vercel deployment
@@ -107,7 +131,7 @@ export default function DocsPage() {
           </div>
         </DocSection>
 
-        <DocSection title="6. Local development">
+        <DocSection title="7. Local development">
           <pre className="bg-gray-900/80 border border-white/10 rounded p-4 overflow-x-auto text-sm text-zinc-300">
 {`git clone https://github.com/rapkuryer-dot/tolyrobot.git
 cd tolyrobot
@@ -120,7 +144,7 @@ npm run dev
           </p>
         </DocSection>
 
-        <DocSection title="7. Deploy on Vercel">
+        <DocSection title="8. Deploy on Vercel">
           <ol className="list-decimal list-inside space-y-2 text-zinc-400">
             <li>Go to vercel.com and import the rapkuryer-dot/tolyrobot repository</li>
             <li>Framework Preset: Next.js (auto-detected)</li>

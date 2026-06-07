@@ -4,6 +4,7 @@ import { CheckCheck } from 'lucide-react';
 import SplineHero from './components/SplineHero';
 import SiteNavbar from './components/SiteNavbar';
 import SiteFooter from './components/SiteFooter';
+import ContractPanel from './components/ContractPanel';
 
 export default function Home() {
   return (
@@ -35,6 +36,8 @@ export default function Home() {
             </p>
           </div>
         </section>
+
+        <ContractPanel />
 
         <Services />
 
